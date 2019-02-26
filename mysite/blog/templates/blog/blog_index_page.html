@@ -2,13 +2,15 @@
 
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% load static %}
+
 {% block body_class %}template-blogindexpage{% endblock %}
 
 {% block content %}
     <h1>{{ page.title }}</h1>
 
     <div class="intro">{{ page.intro|richtext }}</div>
-
+    <img src="{% static 'images/blog.jpg' %}" id="teaser" alt="MyMolo">
     {% for post in blogpages %}
 	{% with post=post.specific %}
 	    <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>

@@ -1,40 +1,87 @@
 {% load static wagtailuserbar %}
+<!doctype html>
+<html class="no-js" lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {% block title %}
+      {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+    {% endblock %}
+    
+    {% block title_suffix %}
+      {% with self.get_site.site_name as site_name %}
+        {% if site_name %}- {{ site_name }}{% endif %}
+      {% endwith %}
+    {% endblock %}
+  </title>
+  <meta name="description" content="Tis the MyMoLo Testpage" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="{% static 'images/logo.jpg' %}" rel="shortcut icon">
+  
+  {# Global stylesheets #}
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+  <link href="{% static 'css/mysite.css' %}" rel="stylesheet">
 
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>
-            {% block title %}
-                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-                {% with self.get_site.site_name as site_name %}
-                    {% if site_name %}- {{ site_name }}{% endif %}
-                {% endwith %}
-            {% endblock %}
-        </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% block extra_css %}
+  {# Override this in templates to add extra stylesheets #}
+  {% endblock %}
+</head>
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+<body class="{% block body_class %}{% endblock %}">
+  <header>
+    <div class="row">
+      <div class="col-md-12">
+      <!-- NAVBAR -->
+      <nav>
+	<!-- button is hidden on desktop, becomes a hamburger on mobile! the span items are the hamburger lines --> 
+	<button type="button" class="navbar-toggle collapsed" id="navbutton" data-toggle="collapse" data-target="#mobile_collapse_front" aria-expanded="false">
+	  <span class="sr-only">Toggle navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse">
+	  <ul class="nav navbar-nav">
+	    <li>
+	      <a class="nav_name" href="https://www.steuerberatung-schmidt.com/downloads">YOUR LODGE</a>
+	    </li>
+	    <li>
+	      <a class="nav_name" href="https://www.steuerberatung-schmidt.com/karriere">EVENTS</a>
+	    </li>
+	    <li>
+	      <a class="nav_name" href="https://www.steuerberatung-schmidt.com/kontakt">NEWS</a>
+	    </li>
+	    <li>
+	      <a class="nav_name" href="https://www.steuerberatung-schmidt.com/kontakt">CONTACT</a>
+	    </li>
+	    <li>
+	      <a class="nav_name" href="blog">BLOG</a>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+      <!-- NAVBAR -->
+      </div>
+    </div>
+  </header>
+  {% wagtailuserbar %}
+  
+  {% block content %}
+  {% endblock %}
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
-    </head>
-
-    <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
-
-        {% block content %}{% endblock %}
-
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
-
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
-    </body>
+  <footer>
+    
+  </footer>
+ 
+  {# Global javascript #}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/mysite.js' %}"></script>
+  
+  {% block extra_js %}
+  {# Override this in templates to add extra javascript #}
+  {% endblock %}
+</body>
 </html>

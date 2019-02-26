@@ -2,8 +2,15 @@
 
 {% load wagtailcore_tags %}
 
+{% load static %}
+
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    {{ page.body|richtext }}
+{{ page.body|richtext }}
+
+<img src="{% static 'images/bg.jpg' %}" id="teaser" alt="MyMolo">
+
+
+
 {% endblock %}

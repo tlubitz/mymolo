@@ -1,0 +1,43 @@
+.row {
+    width:100%;
+    margin-left:0;
+}
+
+nav {
+    background-color:white;
+    opacity:.5;
+}
+
+.navbar-nav {
+    padding-top:20px;
+    padding-bottom:10px;
+    text-align:center;
+    float:none;
+}
+
+.navbar-nav > li {
+    display:inline-block;
+    float:none;
+    z-index:0;
+    opacity:1;
+}
+
+.nav_name {
+    height:60px;
+    line-height:60px;
+    padding:0px 20px;
+    color: #222;
+    text-decoration:none;
+    position:relative;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+#teaser {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:-50px;
+    z-index:-1;
+}
