@@ -1,11 +1,93 @@
+body {
+    background-color:lightgreen;
+}
+
 .row {
     width:100%;
     margin-left:0;
 }
 
+.col-md-12 {
+    padding-left:0;
+    padding-right:0;    
+}
+
+#logo {
+    float:left;
+    padding: 20px 0px 0px 30px;
+    width:5%;
+}
+
+.placeholder_content {
+    margin: 200px 200px 200px 200px;
+    padding: 30px 50px 30px 50px;
+    text-align:center;
+    background-color:rgba(255,255,255,.5);
+}
+
+.nav > li > a:hover {
+    background-color:transparent;
+    text-decoration:underline;
+}
+
+.template-blogindexpage > h1 {
+    margin: 200px 200px 0px 200px;
+    padding: 50px 200px 0px 200px;
+    text-align:center;
+    background-color:rgba(255,255,255,.7);
+}
+
+.template-blogindexpage > .intro {
+    margin: 0px 200px 0px 200px;
+    padding: 50px 200px 50px 200px;
+    text-align:center;
+    background-color:rgba(255,255,255,.7);
+}
+
+.template-blogindexpage > h2 {
+    margin: 200px 200px 0px 200px;
+    padding: 50px 200px 50px 200px;
+    text-align:center;
+    background-color:rgba(255,255,255,.7);
+}
+
+.template-blogindexpage > p {
+    margin: 0px 200px 0px 200px;
+    padding: 50px 200px 0px 200px;
+    text-align:center;
+    font-weight:bold;
+    background-color:rgba(255,255,255,.7);
+}
+
+.template-blogindexpage > .rich-text {
+    margin: 0px 200px 0px 200px;
+    padding: 20px 200px 50px 200px;
+    text-align:center;
+    background-color:rgba(255,255,255,.7);
+}
+
+.template-blogindexpage > img {
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+    background-color:rgba(255,255,255,.7);
+}
+
+#festival {
+    width:50%;
+}
+
+.placeholder_content > h2 {
+    font-weight:600;
+}
+
+
+.placeholder_content > p {
+    font-size:18px;
+}
+
 nav {
-    background-color:white;
-    opacity:.5;
+    background-color:rgba(255,255,255,.5);
 }
 
 .navbar-nav {
