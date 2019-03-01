@@ -32,6 +32,40 @@ class BlogPageTag(TaggedItemBase):
         on_delete=models.CASCADE
     )
 
+
+class EventIndexPage(Page):
+    intro = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('intro', classname="full")
+        ]
+    
+
+class EventPage(Page):
+    description = models.TextField()
+    intro = models.CharField(max_length=250)
+    date = models.DateField()
+
+    def main_image(self):
+        gallery_item = self.gallery_images.first()
+        if gallery_item:
+            return gallery_item.image
+        else:
+            return None
+    
+    search_fields = Page.search_fields + [
+        index.SearchField('description'),
+        index.SearchField('intro'),
+        index.FilterField('date'),
+        ]
+
+    content_panels = Page.content_panels + [
+        FieldPanel('description'),
+        FieldPanel('intro'),
+        FieldPanel('date'),
+        InlinePanel('gallery_images', label='Gallery Images')
+        ]
+    
     
 class BlogPage(Page):
     date = models.DateField("Post date")
@@ -77,6 +111,19 @@ class BlogPageGalleryImage(Orderable):
     ]
 
 
+class EventPageGalleryImage(Orderable):
+    page = ParentalKey(EventPage, on_delete=models.CASCADE, related_name='gallery_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
+
+    
 class BlogTagIndexPage(Page):
 
     def get_context(self, request):
