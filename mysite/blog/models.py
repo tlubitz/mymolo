@@ -43,7 +43,7 @@ class EventIndexPage(Page):
 
 class EventPage(Page):
     description = models.TextField()
-    intro = models.CharField(max_length=250)
+    intro = models.CharField(max_length=250, default="")
     date = models.DateField()
 
     def main_image(self):

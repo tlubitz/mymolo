@@ -18,11 +18,50 @@ body {
     width:5%;
 }
 
+a {
+    color:black;
+}
+
+.spacer50 {
+    padding-bottom:50px;
+}
+
+table {
+    background-color:rgba(255,255,255,.7);
+    display:block;
+    margin: 50px auto 0px auto;
+    font-size:15pt;
+    padding-bottom:20px;
+    padding-top:20px;
+}
+
+.blog_page {
+    padding:50px 20px 20px 20px;
+}
+
+    
+table > tbody > tr > td {
+    padding:20px 20px 20px 20px;
+    vertical-align:top;
+}
+
+td > img {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
 .placeholder_content {
     margin: 100px 200px 200px 200px;
     padding: 30px 50px 30px 50px;
     text-align:center;
     background-color:rgba(255,255,255,.7);
+}
+
+.date {
+    padding-top:20px;
 }
 
 .nav > li > a:hover {
@@ -45,7 +84,7 @@ body {
 }
 
 .template-blogindexpage > h2 {
-    margin: 200px 200px 0px 200px;
+    margin: 100px 200px 0px 200px;
     padding: 50px 200px 50px 200px;
     text-align:center;
     background-color:rgba(255,255,255,.7);
@@ -53,18 +92,12 @@ body {
 
 .template-blogindexpage > p {
     margin: 0px 200px 0px 200px;
-    padding: 50px 200px 0px 200px;
+    padding: 0px 200px 0px 200px;
     text-align:center;
     font-weight:bold;
     background-color:rgba(255,255,255,.7);
 }
 
-.template-blogindexpage > .rich-text {
-    margin: 0px 200px 0px 200px;
-    padding: 20px 200px 50px 200px;
-    text-align:center;
-    background-color:rgba(255,255,255,.7);
-}
 
 .template-blogindexpage > img {
     margin-left:auto;
